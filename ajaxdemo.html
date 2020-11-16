@@ -35,8 +35,10 @@
                 success: function (res) {
                     var t = res.test;
                     alert(t);
-                    {#$("#getdata").innerHTML = "5555";#}
-                    document.getElementById("getdata").innerHTML = t
+                    // 设置值.text()  .html()  .val()
+                    $("#getdata").text("555");
+                    {#document.getElementById("getdata").innerHTML = t;#}
+                    $("#bget").hide();
                 },
             });
         }
