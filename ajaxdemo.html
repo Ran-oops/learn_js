@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>testajax</title>
+</head>
+<body>
+    <script type="text/javascript" src="/static/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript">
+        //编写js代码
+        $(function(){
+            $.ajax({
+                type:'get',
+                url:"/news/testaja/",
+                dataType:'json',
+                async: false,
+                success:function(res){
+                    var t = res.test;
+                    alert(t);
+                    {#$("#getdata").innerHTML = "5555";#}
+                    document.getElementById("getdata").innerHTML = t
+                },
+                error: function (res) {
+                    alert("22222")
+                }
+            });
+        });
+        function clickone() {
+            {#document.getElementById("getdata").innerHTML = "555"#}
+            $.ajax({
+                type: 'get',
+                url: "/news/testaja/",
+                dataType: 'json',
+                async: false,
+                success: function (res) {
+                    var t = res.test;
+                    alert(t);
+                    {#$("#getdata").innerHTML = "5555";#}
+                    document.getElementById("getdata").innerHTML = t
+                },
+            });
+        }
+
+
+    </script>
+
+<p id="getdata"></p>
+<button id="bget" onclick="clickone()">点一下</button>
+</body>
+</html>
