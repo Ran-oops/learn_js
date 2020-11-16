@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p id="h"></p>
+<p id="name"></p>
+<p id="result"></p>
+<p id="cal"></p>
+<p id="dt"></p>
+<button onclick="document.getElementById('dt').innerHTML= Date()">现在的时间</button>
+<button onclick="this.innerHTML= Date()">这里显示现在的时间</button>
+
+<script>
+// var i;
+// 创建数组的几种方法
+// var cars = new Array();
+// cars[0]="Saab";
+// cars[1]="Volvo";
+// cars[2]="BMW";
+
+// var cars = new Array("hello", "you", "are");
+// var cars = ["hello", "you", "are"];
+// for(i=0;i<cars.length; i++){
+//     document.write(cars[i]+"<br>");
+// }
+
+// js的对象相当于python里面的字典
+var person = {
+    firstname: "Yan",
+    lastname: "Sun",
+    age: 24,
+    eyecolor: "black",
+    fullname: function(){
+        return this.firstname + " " + this.lastname;
+    }
+};
+// 获取对象里面的值可以使用.property也使用["property"]
+document.getElementById("h").innerHTML =
+    person.firstname + "现在" + person["age"] + "岁了!";
+
+document.getElementById("name").innerHTML = person.fullname();
+// 如果对象里面有函数,作为对象的属性存储,对象方通过添加()调用
+
+function test(name){
+    alert(name + ",啊哈!")
+}
+
+function getresult(num){
+
+    return num;
+}
+function calFunction(a,b)
+{
+    if (a>b)
+    {
+        return;
+    }
+    x=a+b
+}
+
+function displaydate(){
+    document.getElementById("dt").innerHTML = Date();
+}
+document.getElementById("result").innerHTML = getresult(7);
+document.getElementById("cal").innerHTML = getresult(1,2);
+</script>
+<button onclick="test('小花花')">按钮</button>
+<button onclick="displaydate()">点我给dt显示现在的时间</button>
+</body>
+</html>
