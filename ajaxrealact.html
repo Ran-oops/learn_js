@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax real act</title>
+</head>
+<body>
+    <script>
+        function unbind(){
+            var confirmunbind = confirm("解除绑定后,该账号需要重新实名认证,是否确认解除绑定?");
+            if (confirmunbind == true){
+                console.log("确认解绑");
+                var user_id = $("#userId").text();
+                var datainfo={
+                    "user_id": user_id,
+                };
+                $.ajax({
+                        type: 'get',
+                        url: "/verify/unbind/",
+                        dataType: 'json',
+                        // data: JSON.stringify(datainfo),
+                        data: "user_id=" + user_id,
+                        async: true,
+                        traditional:true,
+                        success: function (data) {
+                            console.log(data);
+                            if (data.verify_status == 0 && data.card_status==0){
+                                 $("#verify_status_display").text("未认证");
+                            }
+                        },
+                        error: function () {
+                            alert("Error!");
+                        }
+                    });
+            }else{
+                console.log("取消解绑");
+                return;
+    }
+        }
+    </script>
+    <button onclick="unbind()"></button>
+</body>
+</html>
