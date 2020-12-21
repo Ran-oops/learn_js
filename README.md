@@ -2,7 +2,7 @@
 
 ## 一.前端参数和后端参数保持一致
 
-![image-20201218182354507](C:\Users\93623\AppData\Roaming\Typora\typora-user-images\image-20201218182354507.png)
+![image-20201218182354507](https://github.com/Ran-oops/learn_js/edit/master/learn_js/img-folder/1.png)
 
 ![image-20201218182421736](C:\Users\93623\AppData\Roaming\Typora\typora-user-images\image-20201218182421736.png)
 
